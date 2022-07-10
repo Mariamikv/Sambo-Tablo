@@ -18,7 +18,6 @@ import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
@@ -54,7 +53,7 @@ public class BoardController implements Initializable {
 
     private Boolean btn5min=false, btn3Min=false, btn4Min=false;
 
-    Alert a = new Alert(Alert.AlertType.ERROR);
+    Alert alert = new Alert(Alert.AlertType.ERROR);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -105,7 +104,6 @@ public class BoardController implements Initializable {
     }
 
     public void saveInfo(){
-        // save into file
         saveButton.setOnAction(e -> writeInfoIntoFile());
     }
 
@@ -115,7 +113,6 @@ public class BoardController implements Initializable {
             timerDisplay.setText("05:00");
             main5MinTimer = new PauseTransition(Duration.minutes(5));
             startGameTimer(main5MinTimer);
-            //fight log
             fight_description.setText("დაიწყო შეჯიბრი 5 წუთი");
         });
         set_4Min_button.setOnAction(e -> {
@@ -123,7 +120,6 @@ public class BoardController implements Initializable {
             timerDisplay.setText("04:00");
             main4MinTimer = new PauseTransition(Duration.minutes(4));
             startGameTimer(main4MinTimer);
-            //fight log
             fight_description.setText("დაიწყო შეჯიბრი 4 წუთი");
         });
         set_3Min_button.setOnAction(e -> {
@@ -131,7 +127,6 @@ public class BoardController implements Initializable {
             timerDisplay.setText("03:00");
             main3MinTimer = new PauseTransition(Duration.minutes(3));
             startGameTimer(main3MinTimer);
-            //fight log
             fight_description.setText("დაიწყო შეჯიბრი 3 წუთი");
         });
     }
@@ -142,9 +137,9 @@ public class BoardController implements Initializable {
                 blue_name.getText().trim().equals("") || blue_surname.getText().trim().equals("") || blue_city.getText().trim().equals("") ||
                 weight.getText().trim().equals("")){
 
-                a.setAlertType(Alert.AlertType.ERROR);
-                a.setContentText("შეიყვანეთ მოთამაშეების ინფორმაცია");
-                a.show();
+                alert.setAlertType(Alert.AlertType.ERROR);
+                alert.setContentText("შეიყვანეთ მოთამაშეების ინფორმაცია");
+                alert.show();
             }else {
                 Player[] players = {
                         new Player(red_name.getText(), red_surname.getText(), red_city.getText(), weight.getText()),

@@ -23,9 +23,7 @@ public class ScoresBoard implements Initializable {
     PauseTransition mainTimer;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-       // setMainTimer();
-    }
+    public void initialize(URL url, ResourceBundle resourceBundle) {}
 
     public void setPlayersData(Player[] players){
         red_name.setText(players[0].getName());
@@ -36,7 +34,7 @@ public class ScoresBoard implements Initializable {
         blue_surname.setText(players[1].getSurname());
         blue_city.setText(players[1].getCity());
 
-        players_weight.setText("წონა: " + players[1].getWeight()+ "კგ");
+        players_weight.setText("წონითი კატეგორია: " + players[1].getWeight()+ "კგ");
     }
 
     public void setMainTimer(Double minutes){
@@ -59,7 +57,6 @@ public class ScoresBoard implements Initializable {
 
     public void setSpecialActions(Double minutes, String action){
         if(Objects.equals(action, HANDLE)){
-            System.out.println("asdsadasdasdasdasdas");
             timer = new PauseTransition(Duration.seconds(30));
             actions_timer.textProperty().bind(setTimer.timeLestAsString(timer));
             timer.play();
@@ -69,7 +66,6 @@ public class ScoresBoard implements Initializable {
         timer.play();
 
         players_actions.setText(action);
-
     }
 
     public void pauseMainTimer(boolean pauseAction){
