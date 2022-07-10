@@ -48,22 +48,25 @@ public class BoardController implements Initializable {
 
     SetTimer setTimer = new SetTimer();
 
-    Boolean btn5min=false, btn3Min=false, btn4Min=false, btnStop=false, btnMedic=false, btnHandle=false, btnPain=false;
+    private PauseTransition main3MinTimer, main4MinTimer, main5MinTimer;
+
+    private ScoresBoard scoresBoard;
+
+    private Boolean btn5min=false, btn3Min=false, btn4Min=false;
 
     Alert a = new Alert(Alert.AlertType.ERROR);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        //scores
-        //getBluePlayerScore();
-        //getRedPlayerScore();
+        setRedPlayerScore();
+        setBluePlayerScore();
+
+        setBluePlayerSpecialActions();
+        setRedPlayerSpecialActions();
 
         //start
         setRoundTimers();
-
-        setRedPlayerSpecialActions();
-        setBluePlayerSpecialActions();
 
         //set label background color and padding
         fight_description.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
@@ -71,37 +74,6 @@ public class BoardController implements Initializable {
 
         saveInfo();
     }
-
-//    public void getBluePlayerScore(){
-//        blue_add_one_button.setOnAction(e -> {
-//            bluePlayerScore++;
-//            blue_counter.setText(String.valueOf(bluePlayerScore));
-//        });
-//
-//        blue_add_two_button.setOnAction(e -> {
-//            bluePlayerScore+=2;
-//            blue_counter.setText(String.valueOf(bluePlayerScore));
-//        });
-//
-//        blue_add_four_button.setOnAction(e -> {
-//            bluePlayerScore+=4;
-//            blue_counter.setText(String.valueOf(bluePlayerScore));
-//        });
-//
-//        blue_subtract_button.setOnAction(e -> {
-//            bluePlayerScore--;
-//            blue_counter.setText(String.valueOf(bluePlayerScore));
-//        });
-//
-//        blue_reset.setOnAction(e -> {
-//            bluePlayerScore = 0;
-//            blue_counter.setText(String.valueOf(bluePlayerScore));
-//        });
-//    }
-//
-//    public void getRedPlayerScore(){
-//
-//    }
 
     void writeInfoIntoFile(){
         // data from red player
@@ -141,24 +113,24 @@ public class BoardController implements Initializable {
         set_5min_button.setOnAction(e -> {
             btn5min=true;
             timerDisplay.setText("05:00");
-            PauseTransition mainTimer = new PauseTransition(Duration.minutes(5));
-            startGameTimer(mainTimer);
+            main5MinTimer = new PauseTransition(Duration.minutes(5));
+            startGameTimer(main5MinTimer);
             //fight log
             fight_description.setText("დაიწყო შეჯიბრი 5 წუთი");
         });
         set_4Min_button.setOnAction(e -> {
             btn4Min=true;
             timerDisplay.setText("04:00");
-            PauseTransition mainTimer = new PauseTransition(Duration.minutes(4));
-            startGameTimer(mainTimer);
+            main4MinTimer = new PauseTransition(Duration.minutes(4));
+            startGameTimer(main4MinTimer);
             //fight log
             fight_description.setText("დაიწყო შეჯიბრი 4 წუთი");
         });
         set_3Min_button.setOnAction(e -> {
             btn3Min=true;
             timerDisplay.setText("03:00");
-            PauseTransition mainTimer = new PauseTransition(Duration.minutes(3));
-            startGameTimer(mainTimer);
+            main3MinTimer = new PauseTransition(Duration.minutes(3));
+            startGameTimer(main3MinTimer);
             //fight log
             fight_description.setText("დაიწყო შეჯიბრი 3 წუთი");
         });
@@ -188,38 +160,13 @@ public class BoardController implements Initializable {
             }
         });
         stop_button.setOnAction(e -> {
-            btnStop=true;
             mainTimer.pause();
+            scoresBoard.pauseMainTimer(true);
         });
         reset_button.setOnAction(e -> mainTimer.stop());
     }
 
-    private void setRedPlayerSpecialActions(){
-
-    }
-
-    public void setBluePlayerSpecialActions(){
-
-    }
-
-    public void openNewWindowAndPassData(Player[] players) throws IOException {
-
-        FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(BoardApplication.class.getResource("scores-board.fxml")));
-        Parent root = loader.load();
-
-        ScoresBoard scoresBoard = loader.getController();
-        scoresBoard.setParentController(this);
-
-        if(btn5min){
-            scoresBoard.setMainTimer(5.0);
-        }else if(btn4Min){
-            scoresBoard.setMainTimer(4.0);
-        }else if(btn3Min){
-            scoresBoard.setMainTimer(3.0);
-        }
-
-        scoresBoard.setPlayersData(players);
-
+    public void setBluePlayerScore(){
         blue_add_one_button.setOnAction(e -> {
             bluePlayerScore++;
             blue_counter.setText(String.valueOf(bluePlayerScore));
@@ -249,7 +196,9 @@ public class BoardController implements Initializable {
             blue_counter.setText(String.valueOf(bluePlayerScore));
             scoresBoard.setBluePlayerScore(bluePlayerScore);
         });
+    }
 
+    private void setRedPlayerScore(){
         red_add_one_button.setOnAction(e -> {
             redPlayerScore++;
             red_counter.setText(String.valueOf(redPlayerScore));
@@ -279,7 +228,51 @@ public class BoardController implements Initializable {
             red_counter.setText(String.valueOf(redPlayerScore));
             scoresBoard.setRedPlayerScore(redPlayerScore);
         });
+    }
 
+    private void setRedPlayerSpecialActions(){
+        PauseTransition RedMedicTimer = new PauseTransition(Duration.minutes(2));
+        PauseTransition RedHandleTimer = new PauseTransition(Duration.seconds(20));
+        PauseTransition RedPainTimer = new PauseTransition(Duration.minutes(1));
+
+        red_medic.setOnAction(e -> {
+            red_time.textProperty().bind(setTimer.timeLestAsString(RedMedicTimer));
+            RedMedicTimer.play();
+            red_action_label.setText(MEDIC);
+            //fight log
+            fight_description.setText(MEDIC);
+            scoresBoard.setSpecialActions(2.0, MEDIC);
+        });
+
+        red_pain.setOnAction(e -> {
+            red_time.textProperty().bind(setTimer.timeLestAsString(RedPainTimer));
+            RedPainTimer.play();
+            red_action_label.setText(PAIN);
+            fight_description.setText(PAIN);
+            scoresBoard.setSpecialActions(1.0, PAIN);
+        });
+
+        red_handle.setOnAction(e -> {
+            red_time.textProperty().bind(setTimer.timeLestAsString(RedHandleTimer));
+            RedHandleTimer.play();
+            red_action_label.setText(HANDLE);
+            // fight log
+            fight_description.setText(HANDLE);
+            scoresBoard.setSpecialActions(0.20, HANDLE);
+        });
+
+        red_stop.setOnAction(e -> {
+            RedMedicTimer.pause();
+            RedPainTimer.pause();
+            RedHandleTimer.pause();
+            red_action_label.setText(STOP);
+            // fight log
+            fight_description.setText(STOP);
+            scoresBoard.pauseTimer(true);
+        });
+    }
+
+    private void setBluePlayerSpecialActions(){
         PauseTransition medicTimer = new PauseTransition(Duration.minutes(2));
         PauseTransition handleTimer = new PauseTransition(Duration.seconds(20));
         PauseTransition painTimer = new PauseTransition(Duration.minutes(1));
@@ -298,7 +291,7 @@ public class BoardController implements Initializable {
             painTimer.play();
             blue_action_label.setText(PAIN);
             fight_description.setText(PAIN);
-            scoresBoard.setSpecialActions(0.20, PAIN);
+            scoresBoard.setSpecialActions(1.0, PAIN);
         });
 
         blue_handle.setOnAction(e -> {
@@ -307,7 +300,7 @@ public class BoardController implements Initializable {
             blue_action_label.setText(HANDLE);
             // fight log
             fight_description.setText(HANDLE);
-            scoresBoard.setSpecialActions(1.0, HANDLE);
+            scoresBoard.setSpecialActions(0.20, HANDLE);
         });
 
         blue_stop.setOnAction(event -> {
@@ -319,46 +312,25 @@ public class BoardController implements Initializable {
             fight_description.setText(STOP);
             scoresBoard.pauseTimer(true);
         });
+    }
 
-//        PauseTransition medicTimer = new PauseTransition(Duration.minutes(2));
-//        PauseTransition handleTimer = new PauseTransition(Duration.seconds(20));
-//        PauseTransition painTimer = new PauseTransition(Duration.minutes(1));
+    public void openNewWindowAndPassData(Player[] players) throws IOException {
 
-        red_medic.setOnAction(e -> {
-            red_time.textProperty().bind(setTimer.timeLestAsString(medicTimer));
-            medicTimer.play();
-            red_action_label.setText(MEDIC);
-            //fight log
-            fight_description.setText(MEDIC);
-            scoresBoard.setSpecialActions(2.0, MEDIC);
-        });
+        FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(BoardApplication.class.getResource("scores-board.fxml")));
+        Parent root = loader.load();
 
-        red_pain.setOnAction(e -> {
-            red_time.textProperty().bind(setTimer.timeLestAsString(painTimer));
-            painTimer.play();
-            red_action_label.setText(PAIN);
-            fight_description.setText(PAIN);
-            scoresBoard.setSpecialActions(0.20, PAIN);
-        });
+        scoresBoard = loader.getController();
+        scoresBoard.setParentController(this);
 
-        red_handle.setOnAction(e -> {
-            red_time.textProperty().bind(setTimer.timeLestAsString(handleTimer));
-            handleTimer.play();
-            red_action_label.setText(HANDLE);
-            // fight log
-            fight_description.setText(HANDLE);
-            scoresBoard.setSpecialActions(1.0, HANDLE);
-        });
+        if(btn5min){
+            scoresBoard.setMainTimer(5.0);
+        }else if(btn4Min){
+            scoresBoard.setMainTimer(4.0);
+        }else if(btn3Min){
+            scoresBoard.setMainTimer(3.0);
+        }
 
-        red_stop.setOnAction(e -> {
-            medicTimer.pause();
-            painTimer.pause();
-            handleTimer.pause();
-            red_action_label.setText(STOP);
-            // fight log
-            fight_description.setText(STOP);
-            scoresBoard.pauseTimer(true);
-        });
+        scoresBoard.setPlayersData(players);
 
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Scores Board");

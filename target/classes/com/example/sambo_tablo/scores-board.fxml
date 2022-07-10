@@ -42,13 +42,13 @@
                 </font>
             </Label>
 
-            <Label fx:id="players_actions" layoutX="42.0" layoutY="263.0" prefHeight="151.0" prefWidth="274.0" text=" ექიმის დახმარება " textAlignment="CENTER" textFill="#fdfcfc" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+            <Label fx:id="players_actions" layoutX="42.0" layoutY="263.0" prefHeight="151.0" prefWidth="274.0" text=" " textAlignment="CENTER" textFill="#fdfcfc" textOverrun="CENTER_ELLIPSIS" wrapText="true">
                 <font>
                     <Font name="Calibri Bold" size="30.0" />
                 </font>
             </Label>
 
-            <Label fx:id="actions_timer" layoutX="99.0" layoutY="431.0" text="01:30" textFill="#fdfcfc">
+            <Label fx:id="actions_timer" layoutX="99.0" layoutY="431.0" textFill="#fdfcfc">
                 <font>
                     <Font name="Calibri Bold" size="60.0" />
                 </font>
