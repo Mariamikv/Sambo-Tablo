@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sambo_tablo.controller.BoardController">
+    <SplitPane dividerPositions="0.3308270676691729, 0.6679197994987469" prefHeight="1920" prefWidth="1080">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #d01317;">
+            <TextField fx:id="red_name" layoutX="98.0" layoutY="22.0" prefHeight="37.0" prefWidth="250.0" promptText="შეიყვანე სახელი" />
+            <Label layoutX="13.0" layoutY="30.0" text="სახელი:" textFill="#f8f5f5">
+                <font>
+                    <Font name="Calibri Bold" size="18.0" />
+                </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="75.0" text="გვარი:" textFill="#f8f7f7">
+                <font>
+                    <Font name="Calibri Bold" size="18.0" />
+                </font>
+            </Label>
+            <TextField fx:id="red_surname" layoutX="98.0" layoutY="70.0" prefHeight="37.0" prefWidth="250.0" promptText="შეიყვანე გვარი" />
+
+            <TextField fx:id="red_city" layoutX="98.0" layoutY="118.0" prefHeight="37.0" prefWidth="250.0" promptText="შეიყვანე ქალაქი" />
+            <Label layoutX="13.0" layoutY="126.0" text="ქალაქი:" textFill="#f8f5f5">
+                <font>
+                    <Font name="Calibri Bold" size="18.0" />
+                </font>
+            </Label>
+            <Button fx:id="red_add_one_button" layoutX="36.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Add +1" textAlignment="CENTER">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="red_add_two_button" layoutX="114.0" layoutY="387.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Add +2">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="red_add_four_button" layoutX="176.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Add +4">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="red_subtract_button" layoutX="316.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Subtract -1">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="red_reset" layoutX="254.0" layoutY="387.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Reset">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Label layoutX="18.0" layoutY="444.0" text="Special Actions:" textFill="#faf8f8">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font>
+            </Label>
+            <Button fx:id="red_medic" layoutX="20.0" layoutY="483.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Medic">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="red_pain" layoutX="20.0" layoutY="539.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Pain">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="red_handle" layoutX="20.0" layoutY="593.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Handle">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="red_stop" layoutX="20.0" layoutY="645.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Stop">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Label fx:id="red_time" layoutX="221.0" layoutY="559.0" textFill="#fdfdfd">
+                <font>
+                    <Font name="Calibri Bold" size="72.0" />
+                </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="703.0" textFill="#fdfbfb">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+
+            <Label fx:id="red_action_label" layoutX="204.0" layoutY="493.0" text=" " textFill="WHITE">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <Label fx:id="red_counter" layoutX="218.0" layoutY="200.0" text="0" textFill="WHITE">
+                <font>
+                    <Font size="72.0" />
+                </font>
+            </Label>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: black;">
+            <Label layoutX="217.0" layoutY="52.0" text="Weight" textFill="#fdfcfc">
+                <font>
+                    <Font name="Calibri Bold" size="24.0" />
+                </font>
+            </Label>
+            <TextField fx:id="weight" layoutX="193.0" layoutY="93.0" prefHeight="38.0" prefWidth="123.0" promptText="შეიყვანე წონა" />
+            <Label fx:id="timerDisplay" layoutX="171.0" layoutY="177.0" text="00:00" textFill="WHITE">
+                <font>
+                    <Font name="Calibri Bold" size="72.0" />
+                </font>
+            </Label>
+            <Button fx:id="start_button" layoutX="193.0" layoutY="276.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="start">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="stop_button" layoutX="193.0" layoutY="327.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Stop">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="reset_button" layoutX="193.0" layoutY="382.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Reset">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="set_5min_button" layoutX="193.0" layoutY="436.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Set 5 Min">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="set_4Min_button" layoutX="192.0" layoutY="490.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Set 4 Min">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="set_3Min_button" layoutX="192.0" layoutY="541.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Set 3 Min">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Label layoutX="24.0" layoutY="587.0" text="Fight Log:" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+            <TextArea fx:id="fight_description" layoutX="24.0" layoutY="630.0" prefHeight="144.0" prefWidth="467.0" />
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #10205b;">
+            <TextField fx:id="blue_name" layoutX="98.0" layoutY="22.0" prefHeight="37.0" prefWidth="250.0" promptText="შეიყვანე სახელი" />
+            <Label layoutX="13.0" layoutY="30.0" text="სახელი:" textFill="#f8f5f5">
+                <font>
+                    <Font name="Calibri Bold" size="18.0" />
+                </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="75.0" text="გვარი:" textFill="#f8f7f7">
+                <font>
+                    <Font name="Calibri Bold" size="18.0" />
+                </font>
+            </Label>
+            <TextField fx:id="blue_surname" layoutX="98.0" layoutY="70.0" prefHeight="37.0" prefWidth="250.0" promptText="შეიყვანე გვარი" />
+            <TextField fx:id="blue_city" layoutX="98.0" layoutY="121.0" prefHeight="37.0" prefWidth="250.0" promptText="შეიყვანე ქალაქი" />
+            <Label layoutX="13.0" layoutY="129.0" text="ქალაქი:" textFill="#f8f5f5">
+                <font>
+                    <Font name="Calibri Bold" size="18.0" />
+                </font>
+            </Label>
+            <Label fx:id="blue_counter" layoutX="217.0" layoutY="212.0" text="0" textFill="#faf9f9">
+                <font>
+                    <Font size="72.0" />
+                </font>
+            </Label>
+            <Button fx:id="blue_add_one_button" layoutX="36.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Add +1">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="blue_add_two_button" layoutX="114.0" layoutY="387.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Add +2">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="blue_add_four_button" layoutX="176.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Add +4">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="blue_subtract_button" layoutX="316.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Subtract -1">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="blue_reset" layoutX="254.0" layoutY="387.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Reset">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Label layoutX="18.0" layoutY="444.0" text="Special Actions:" textFill="#faf8f8">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font>
+            </Label>
+            <Button fx:id="blue_medic" layoutX="20.0" layoutY="483.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Medic">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="blue_pain" layoutX="20.0" layoutY="539.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Pain">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="blue_handle" layoutX="20.0" layoutY="593.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Handle">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="blue_stop" layoutX="20.0" layoutY="645.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Stop">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Label fx:id="blue_time" layoutX="221.0" layoutY="559.0" textFill="#fdfdfd">
+                <font>
+                    <Font name="Calibri Bold" size="72.0" />
+                </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="703.0" textFill="#fdfbfb">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+
+            <Label fx:id="blue_action_label" layoutX="204.0" layoutY="493.0" text=" " textFill="WHITE">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <Button fx:id="saveButton" layoutX="262.0" layoutY="753.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="73.0" text="Save">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+        </AnchorPane>
+    </SplitPane>
+</VBox>
