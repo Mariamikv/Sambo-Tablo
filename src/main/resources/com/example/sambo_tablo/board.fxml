@@ -26,52 +26,52 @@
                     <Font name="Calibri Bold" size="18.0" />
                 </font>
             </Label>
-            <Button fx:id="red_add_one_button" layoutX="36.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Add +1" textAlignment="CENTER">
+            <Button fx:id="red_add_one_button" layoutX="36.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="+1 ქულა" textAlignment="CENTER">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="red_add_two_button" layoutX="114.0" layoutY="387.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Add +2">
+            <Button fx:id="red_add_two_button" layoutX="114.0" layoutY="387.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="+2 ქულა">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="red_add_four_button" layoutX="176.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Add +4">
+            <Button fx:id="red_add_four_button" layoutX="176.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="+4 ქულა">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="red_subtract_button" layoutX="316.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Subtract -1">
+            <Button fx:id="red_subtract_button" layoutX="316.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="-1 ქულა">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="red_reset" layoutX="254.0" layoutY="387.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Reset">
+            <Button fx:id="red_reset" layoutX="254.0" layoutY="387.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="გადატვირთვა">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Label layoutX="18.0" layoutY="444.0" text="Special Actions:" textFill="#faf8f8">
+            <Label layoutX="18.0" layoutY="444.0" text="დახმარება:" textFill="#faf8f8">
                 <font>
                     <Font name="System Bold" size="18.0" />
                 </font>
             </Label>
-            <Button fx:id="red_medic" layoutX="20.0" layoutY="483.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Medic">
+            <Button fx:id="red_medic" layoutX="20.0" layoutY="483.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="ექიმი">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="red_pain" layoutX="20.0" layoutY="539.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Pain">
+            <Button fx:id="red_pain" layoutX="20.0" layoutY="539.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="ტკივილი">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="red_handle" layoutX="20.0" layoutY="593.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Handle">
+            <Button fx:id="red_handle" layoutX="20.0" layoutY="593.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="შებოჭვა">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="red_stop" layoutX="20.0" layoutY="645.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Stop">
+            <Button fx:id="red_stop" layoutX="20.0" layoutY="645.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="შეჩერება">
                 <font>
                     <Font size="14.0" />
                 </font>
@@ -99,7 +99,7 @@
             </Label>
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: black;">
-            <Label layoutX="217.0" layoutY="52.0" text="Weight" textFill="#fdfcfc">
+            <Label layoutX="150.0" layoutY="55.0" text="წონითი კატეგორია" textFill="#fdfcfc">
                 <font>
                     <Font name="Calibri Bold" size="24.0" />
                 </font>
@@ -110,39 +110,39 @@
                     <Font name="Calibri Bold" size="72.0" />
                 </font>
             </Label>
-            <Button fx:id="start_button" layoutX="193.0" layoutY="276.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="start">
+            <Button fx:id="start_button" layoutX="193.0" layoutY="276.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="დაწყება">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="stop_button" layoutX="193.0" layoutY="327.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Stop">
+            <Button fx:id="stop_button" layoutX="193.0" layoutY="327.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="შეჩერება">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="reset_button" layoutX="193.0" layoutY="382.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Reset">
+            <Button fx:id="reset_button" layoutX="193.0" layoutY="382.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="გადატვირთვა">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="set_5min_button" layoutX="193.0" layoutY="436.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Set 5 Min">
+            <Button fx:id="set_5min_button" layoutX="193.0" layoutY="436.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="5 წუთი">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="set_4Min_button" layoutX="192.0" layoutY="490.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Set 4 Min">
+            <Button fx:id="set_4Min_button" layoutX="192.0" layoutY="490.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="4 წუთი">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="set_3Min_button" layoutX="192.0" layoutY="541.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Set 3 Min">
+            <Button fx:id="set_3Min_button" layoutX="192.0" layoutY="541.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="3 წუთი">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Label layoutX="24.0" layoutY="587.0" text="Fight Log:" textFill="WHITE">
+            <Label layoutX="23.0" layoutY="600.0" text="შეჯიბრის შესახებ ინფორმაცია:" textFill="WHITE">
                 <font>
-                    <Font name="System Bold" size="24.0" />
+                    <Font name="System Bold" size="14.0" />
                 </font>
             </Label>
             <TextArea fx:id="fight_description" layoutX="24.0" layoutY="630.0" prefHeight="144.0" prefWidth="467.0" />
@@ -171,52 +171,52 @@
                     <Font size="72.0" />
                 </font>
             </Label>
-            <Button fx:id="blue_add_one_button" layoutX="36.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Add +1">
+            <Button fx:id="blue_add_one_button" layoutX="36.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="+1 ქულა">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="blue_add_two_button" layoutX="114.0" layoutY="387.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Add +2">
+            <Button fx:id="blue_add_two_button" layoutX="114.0" layoutY="387.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="+2 ქულა">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="blue_add_four_button" layoutX="176.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Add +4">
+            <Button fx:id="blue_add_four_button" layoutX="176.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="+4 ქულა">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="blue_subtract_button" layoutX="316.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Subtract -1">
+            <Button fx:id="blue_subtract_button" layoutX="316.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="-1 ქულა">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="blue_reset" layoutX="254.0" layoutY="387.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Reset">
+            <Button fx:id="blue_reset" layoutX="254.0" layoutY="387.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="გადატვირთვა">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Label layoutX="18.0" layoutY="444.0" text="Special Actions:" textFill="#faf8f8">
+            <Label layoutX="18.0" layoutY="444.0" text="დახმარება:" textFill="#faf8f8">
                 <font>
                     <Font name="System Bold" size="18.0" />
                 </font>
             </Label>
-            <Button fx:id="blue_medic" layoutX="20.0" layoutY="483.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Medic">
+            <Button fx:id="blue_medic" layoutX="20.0" layoutY="483.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="ექიმი">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="blue_pain" layoutX="20.0" layoutY="539.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Pain">
+            <Button fx:id="blue_pain" layoutX="20.0" layoutY="539.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="ტკივილი">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="blue_handle" layoutX="20.0" layoutY="593.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Handle">
+            <Button fx:id="blue_handle" layoutX="20.0" layoutY="593.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="შებოჭვა">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="blue_stop" layoutX="20.0" layoutY="645.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="Stop">
+            <Button fx:id="blue_stop" layoutX="20.0" layoutY="645.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #bdc8d6;" text="შეჩერება">
                 <font>
                     <Font size="14.0" />
                 </font>
@@ -237,7 +237,7 @@
                     <Font size="14.0" />
                 </font>
             </Label>
-            <Button fx:id="saveButton" layoutX="262.0" layoutY="753.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="73.0" text="Save">
+            <Button fx:id="saveButton" layoutX="238.0" layoutY="753.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="98.0" style="-fx-background-color: #bdc8d6;" text="შენახვა">
                 <font>
                     <Font size="14.0" />
                 </font>

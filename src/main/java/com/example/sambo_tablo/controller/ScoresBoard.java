@@ -5,7 +5,11 @@ import com.example.sambo_tablo.timer.SetTimer;
 import javafx.animation.PauseTransition;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.util.Duration;
+
+import java.io.File;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -14,6 +18,7 @@ import static com.example.sambo_tablo.utils.Constants.HANDLE;
 public class ScoresBoard implements Initializable {
     public Label red_name, red_surname, red_score, blue_score, blue_surname, blue_name, players_weight, main_timer,
             players_actions, actions_timer, red_city, blue_city;
+    public ImageView image;
 
     private BoardController boardController;
 
@@ -23,7 +28,11 @@ public class ScoresBoard implements Initializable {
     PauseTransition mainTimer;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {}
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        File file = new File("src/assets/logo.png");
+        Image setImage = new Image(file.toURI().toString());
+        image.setImage(setImage);
+    }
 
     public void setPlayersData(Player[] players){
         red_name.setText(players[0].getName());
